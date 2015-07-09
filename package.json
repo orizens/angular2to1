@@ -1,0 +1,24 @@
+{
+  "name": "angular2to1",
+  "version": "0.0.1",
+  "description": "An angular 2 to angular 1 shim tool to start writing angular 2 component syntax with angular 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orizens/angular2to1.git"
+  },
+  "keywords": [
+    "angular",
+    "anuglar2",
+    "shim"
+  ],
+  "author": "Oren Farhi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orizens/angular2to1/issues"
+  },
+  "homepage": "https://github.com/orizens/angular2to1"
+}
