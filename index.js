@@ -10,7 +10,7 @@ if (typeof module !== 'undefined' && typeof exports !== "undefined" && module.ex
 
     function Angular2Component (options) {
     	var _selector = '';
-
+        var isAttribute = false;
     	var _directive = {
             bindToController: true,
 			// templateUrl: '',
@@ -33,7 +33,7 @@ if (typeof module !== 'undefined' && typeof exports !== "undefined" && module.ex
     	function Component (options) {
     		var injectors = options.appInjector || [];
     		_selector = options.selector;
-            var isAttribute = _selector.indexOf('[');
+            isAttribute = _selector.indexOf('[') > -1;
             if (isAttribute) {
                 _directive.restrict = 'A';
             }
@@ -56,7 +56,9 @@ if (typeof module !== 'undefined' && typeof exports !== "undefined" && module.ex
     	};
 
     	function Class (options) {
-    		var angular1Selector = _selector.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
+    		var angular1Selector = _selector
+                .replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
+                .replace(/\[|]/g, "");
     		_directive.controller = options.constructor;
 
     		component[_selector]
