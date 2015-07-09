@@ -1,6 +1,6 @@
 {
   "name": "angular2to1",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An angular 2 to angular 1 shim tool to start writing angular 2 component syntax with angular 1",
   "main": "index.js",
   "scripts": {
