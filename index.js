@@ -17,7 +17,8 @@ if (typeof module !== 'undefined' && typeof exports !== "undefined" && module.ex
 			// template: '',
 		    controller: '',
 		    controllerAs: 'vm',
-		    restrict: 'E'
+		    restrict: 'E',
+            scope: {}
 		    // replace: true
     	};
 
@@ -32,6 +33,10 @@ if (typeof module !== 'undefined' && typeof exports !== "undefined" && module.ex
     	function Component (options) {
     		var injectors = options.appInjector || [];
     		_selector = options.selector;
+            var isAttribute = _selector.indexOf('[');
+            if (isAttribute) {
+                _directive.restrict = 'A';
+            }
     		if (!component[_selector]){
     			component[_selector] = angular.module(_selector, injectors);
     		}

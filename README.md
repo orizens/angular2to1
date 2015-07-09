@@ -40,6 +40,10 @@ Simply, use the module in html:
 ```html
 <my-app></my-app>
 ```
+## API  
+1. Component - a component is an element by default  
+  1. selector - of element - ```<my-app></my-app>``` - defined as 'my-app'  
+  1. selector - of attribute - ```<div tooltip></div>``` - defined as '[tooltip]'  
 
 ## Install
 use npm:  
