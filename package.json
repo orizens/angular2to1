@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/orizens/angular2to1/issues"
   },
-  "homepage": "https://github.com/orizens/angular2to1"
+  "homepage": "https://github.com/orizens/angular2to1",
+  "dependencies": {
+    "angular": "^1.4.2"
+  }
 }
