@@ -8,3 +8,41 @@ reasons:
 1. You want to learn angular 2 syntax  
 2. You still want to develop with angular 1  
 3. You want to ease migration (when possible) of angular 1 to 2  
+
+## Examples
+This code eventually defines an angular 1 module, directive and controller:  
+```javascript
+var myApp = angular
+	.Component({
+		selector: 'my-app'
+		appInjector: [ 
+			'core.services'
+		]
+	})
+	.View({
+		templateUrl: 'app/my-app/my-app.tpl.html'
+	})
+	.Class({
+		constructor: 'MyAppCtrl'
+	})
+```  
+Consume the new module in your and include it:
+```javascript
+angular.module('app', [
+	'my-app'
+])
+// or if you're using commonjs
+angular.module('app', [
+	require('my-app').name
+])
+```
+Simply, use the module in html:  
+```html
+<my-app></my-app>
+```
+
+## Install
+use npm:  
+```
+npm install angular2to1 --save
+```

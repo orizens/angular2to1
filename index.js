@@ -23,7 +23,8 @@ if (typeof module !== 'undefined' && typeof exports !== "undefined" && module.ex
 
    		var component = {
    			View: View,
-   			Class: Class
+   			Class: Class,
+            _directive: _directive
    		};
 
    		return Component(options);
