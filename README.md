@@ -1,5 +1,6 @@
 # angular2to1 Project
-An angular 2 to angular 1 Shim - Write angular 2 components with angular 1
+An angular 2 to angular 1 Shim - Write angular 2 components with angular 1.  
+As explained in my [blog post: Write Angular 2 Components In Angular 1](http://orizens.com/wp/topics/write-angular-2-components-in-angular-1/).
 
 ## Why
 An angular 2 to angular 1 function.
@@ -42,8 +43,8 @@ Simply, use the module in html:
 ```
 ## API  
 1. Component - a component is an element by default  
-  1. selector - of element - ```<my-app></my-app>``` - defined as 'my-app'  
-  1. selector - of attribute - ```<div tooltip></div>``` - defined as '[tooltip]'  
+  1. selector - of element - ```<my-app></my-app>``` - defined as ```'my-app'```  
+  1. selector - of attribute - ```<div tooltip></div>``` - defined as ```'[tooltip]'```  
 
 ## Install
 use npm:  
