@@ -4,7 +4,7 @@
   "description": "An angular 2 to angular 1 shim tool to start writing angular 2 component syntax with angular 1",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/karma/bin/karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,15 @@
   "homepage": "https://github.com/orizens/angular2to1",
   "dependencies": {
     "angular": "^1.4.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.3",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.37",
+    "karma-jasmine": "^0.3.6",
+    "karma-mocha-reporter": "^1.0.2",
+    "karma-ng-html2js-preprocessor": "^0.1.2",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "phantomjs": "^1.9.17"
   }
 }
