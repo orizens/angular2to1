@@ -16,7 +16,7 @@ This code eventually defines an angular 1 module, directive and controller:
 var myApp = angular
 	.Component({
 		selector: 'my-app'
-		appInjector: [ 
+		bindings: [ 
 			'core.services'
 		]
 	})

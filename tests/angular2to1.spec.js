@@ -1,9 +1,10 @@
 describe('Angular2To1 Element Component', function() {
-	var component, ctrl, TestAppCtrl;
+	var component, ctrl, TestAppCtrl, Tests;
 
 	beforeEach(module('test-app'));
 
-	beforeEach(inject(function ($controller, $rootScope) {
+	beforeEach(inject(function ($controller, $rootScope, _Tests_) {
+		Tests = _Tests_;
 		scope = $rootScope.$new();
 		ctrl = $controller("TestAppCtrl as vm", {
 		  $scope: scope 
@@ -22,4 +23,7 @@ describe('Angular2To1 Element Component', function() {
 		expect(scope.vm.name).toMatch(ctrl.name);
 	});
 	
+	it('should inject the services & modules from "bindings"', function() {
+		expect(scope.vm.items).toBe(Tests.items);
+	});
 });

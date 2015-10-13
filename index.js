@@ -2,10 +2,12 @@
 // By Oren Farhi
 if (typeof module !== 'undefined' && typeof exports !== "undefined" && module.exports === exports) {
     var angular = require('angular');
-    module.exports = Angular2Component;
 }
-(function() {
-    'use strict';
+(function(angular, module) {
+    if (module && module.exports){
+        module.exports = Angular2Component;
+    } 
+
     if (!angular) {
         console.error('angular has not been loaded. make sure to include angular before angualr2to1 module.');
         return;
@@ -36,7 +38,7 @@ if (typeof module !== 'undefined' && typeof exports !== "undefined" && module.ex
         return Component(options);
 
         function Component (options) {
-            var injectors = options.appInjector || [];
+            var injectors = options.bindings || [];
             var moduleName = options.selector;
             _selector = moduleName;
             isAttribute = _selector.indexOf('[') > -1;
@@ -85,4 +87,4 @@ if (typeof module !== 'undefined' && typeof exports !== "undefined" && module.ex
                 .replace(/\[|]/g, "");
         }
     };
-})();
+})(angular, module);
