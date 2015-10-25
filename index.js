@@ -1,10 +1,8 @@
 // Angular2Component
 // By Oren Farhi
-if (typeof module !== 'undefined' && typeof exports !== "undefined" && module.exports === exports) {
-    var angular = require('angular');
-}
-(function(angular, module) {
-    if (module && module.exports){
+(function(angular) {
+    if (typeof module !== 'undefined' && typeof exports !== "undefined" && module.exports === exports) {
+        angular = require('angular');
         module.exports = Angular2Component;
     } 
 
@@ -87,4 +85,4 @@ if (typeof module !== 'undefined' && typeof exports !== "undefined" && module.ex
                 .replace(/\[|]/g, "");
         }
     };
-})(angular, module);
+})(angular);
