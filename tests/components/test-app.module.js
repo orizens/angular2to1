@@ -3,9 +3,12 @@
     angular
         .Component({
             selector: 'test-app',
-            bindings: [
+            providers: [
                 'tests'
-            ]
+            ],
+            bindings: {
+                app: '@'
+            }
         })
         .View({
             template: '<div> {{ vm.name }} </div>'

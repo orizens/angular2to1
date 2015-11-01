@@ -6,6 +6,7 @@ describe('Angular2To1 Element Component', function() {
 	beforeEach(inject(function ($controller, $rootScope, _Tests_) {
 		Tests = _Tests_;
 		scope = $rootScope.$new();
+		scope.app = "ng2to1";
 		ctrl = $controller("TestAppCtrl as vm", {
 		  $scope: scope 
 		});
