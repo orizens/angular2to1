@@ -9,7 +9,6 @@ branches:
 install:
 - npm install -g karma
 - npm install
-- npm run build
 
 after_script: 
 - process.exit()
