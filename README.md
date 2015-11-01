@@ -16,9 +16,12 @@ This code eventually defines an angular 1 module, directive and controller:
 var myApp = angular
 	.Component({
 		selector: 'my-app'
-		bindings: [ 
+		providers: [ 
 			'core.services'
-		]
+		],
+		bindings: {
+			app: '@'
+		}
 	})
 	.View({
 		templateUrl: 'app/my-app/my-app.tpl.html'
