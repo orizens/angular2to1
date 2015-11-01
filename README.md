@@ -1,6 +1,12 @@
+[![Build Status](https://travis-ci.org/orizens/angular2to1.svg)](https://travis-ci.org/orizens/angular2to1)
+
 # angular2to1 Project
 An angular 2 to angular 1 Shim - Write angular 2 components with angular 1.  
 As explained in my [blog post: Write Angular 2 Components In Angular 1](http://orizens.com/wp/topics/write-angular-2-components-in-angular-1/).
+
+## Install
+via npm:  
+```npm i angular2to1 --save-dev```  
 
 ## Why
 An angular 2 to angular 1 function.
