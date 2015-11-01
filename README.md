@@ -42,7 +42,7 @@ angular.module('app', [
 ```
 Simply, use the module in html:  
 ```html
-<my-app></my-app>
+<my-app app="my-player"></my-app>
 ```
 ## API  
 1. Component - a component is an element by default  
