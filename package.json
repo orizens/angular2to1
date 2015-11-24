@@ -4,7 +4,8 @@
   "description": "An angular 2 to angular 1 shim tool to start writing angular 2 component syntax with angular 1",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/karma/bin/karma start karma.conf.js"
+    "test": "node_modules/karma/bin/karma start karma.conf.js",
+    "release": "uglify -s index.js -o dist/angular2to1.min.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,8 @@
     "karma-jasmine": "^0.3.6",
     "karma-mocha-reporter": "^1.0.2",
     "karma-ng-html2js-preprocessor": "^0.1.2",
-    "karma-phantomjs-launcher": "^0.2.0"
+    "karma-phantomjs-launcher": "^0.2.0",
+    "karma-phantomjs2-launcher": "^0.3.2",
+    "uglify": "^0.1.5"
   }
 }

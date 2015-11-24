@@ -17,7 +17,8 @@ module.exports = function(config) {
     files: [
         'node_modules/angular/angular.min.js',
         'node_modules/angular-mocks/angular-mocks.js',
-        'index.js',
+        // 'index.js',
+        'dist/angular2to1.min.js',
         'tests/components/**/*.js',
         'tests/**/*.spec.js'
     ],
@@ -59,7 +60,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['PhantomJS2'],
 
 
     // Continuous Integration mode
@@ -69,6 +70,7 @@ module.exports = function(config) {
     plugins: [
         'karma-mocha-reporter',
         'karma-phantomjs-launcher',
+        'karma-phantomjs2-launcher',
         'karma-chrome-launcher',
         'karma-jasmine'
     ]

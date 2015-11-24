@@ -3,6 +3,9 @@
 (function(angular) {
     if (typeof module !== 'undefined' && typeof exports !== "undefined" && module.exports === exports) {
         angular = require('angular');
+        if (global) {
+            global.ng = angular;
+        }
         module.exports = Angular2Component;
     } 
 
@@ -11,6 +14,9 @@
         return;
     }
 
+    if (window) {
+        window.ng = angular;
+    }
     angular.Component = Angular2Component;
 
     function Angular2Component (options) {

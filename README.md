@@ -8,6 +8,9 @@ As explained in my [blog post: Write Angular 2 Components In Angular 1](http://o
 via npm:  
 ```npm i angular2to1 --save-dev```  
 
+## Usage  
+in browser, include the ```dist/angular2to1.min.js``` (or ```./index.js```)  
+
 ## Why
 An angular 2 to angular 1 function.
 This function should provide **ES5** syntax of angular v2 to be used with angular 1
@@ -19,7 +22,7 @@ reasons:
 ## Examples
 This code eventually defines an angular 1 module, directive and controller:  
 ```javascript
-var myApp = angular
+var myApp = ng
 	.Component({
 		selector: 'my-app'
 		providers: [ 
