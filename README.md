@@ -22,7 +22,7 @@ reasons:
 ## Examples
 This code eventually defines an angular 1 module, directive and controller:  
 ```javascript
-var myApp = ng
+var myApp = ng.core
 	.Component({
 		selector: 'my-app'
 		providers: [ 

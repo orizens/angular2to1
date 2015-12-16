@@ -17,6 +17,7 @@
     if (window) {
         window.ng = angular;
     }
+    angular.core = Component = Angular2Component;
     angular.Component = Angular2Component;
 
     function Angular2Component (options) {
@@ -61,7 +62,7 @@
                 Decorator.addBindings(scopeBindings);
             }
             return component;
-        };
+        }
 
         function View (options) {
             if (options.templateUrl) {
@@ -75,7 +76,7 @@
                 angular.extend(_directive.scope, options.bindings);
             }
             return component;
-        };
+        }
 
         function Class (options) {
             var angular1Selector = getSanitizedSelector();
@@ -85,11 +86,11 @@
                 .directive(angular1Selector, directiveFn);
 
             return component;
-        };
+        }
 
         function directiveFn () {
             return _directive;
-        };
+        }
 
         function ComponentDecorator() {
             return {
