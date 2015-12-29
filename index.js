@@ -28,7 +28,7 @@
             // templateUrl: '',
             // template: '',
             controller: '',
-            controllerAs: 'vm',
+            controllerAs: '',
             restrict: 'E',
             scope: {}
             // replace: true
@@ -41,25 +41,35 @@
         };
 
         var Decorator = ComponentDecorator();
+        var moduleName;
 
         return Component(options);
 
         function Component (options) {
+            moduleName = getSanitizedSelector(options.selector);
             var injectors = options.providers ? options.providers : options.viewProviders ? options.viewProviders : [];
             var scopeBindings = options.bindings || {};
-            var moduleName = options.selector;
-            _selector = moduleName;
+            var hasTemplate = options.template || options.templateUrl;
+            var controllerAs = options.controllerAs ? options.controllerAs : moduleName;
+            var ng1ModuleName = options.selector;
+            _selector = options.selector;
             isAttribute = _selector.indexOf('[') > -1;
             if (isAttribute) {
                 _directive.restrict = 'A';
-                moduleName = getSanitizedSelector();
+                ng1ModuleName = moduleName;
             }
-            if (!component[_selector]){
-                component[_selector] = Decorator.addProviders(moduleName, injectors);
+            if (controllerAs && controllerAs.length) {
+                _directive.controllerAs = controllerAs;
+            }
+            if (!component[ng1ModuleName]){
+                component[ng1ModuleName] = Decorator.addProviders(ng1ModuleName, injectors);
             }
             
             if (Object.keys(scopeBindings).length) {
                 Decorator.addBindings(scopeBindings);
+            }
+            if (hasTemplate) {
+                View(options);
             }
             return component;
         }
@@ -72,18 +82,15 @@
             if (options.template) {
                 _directive.template = options.template;
             }
-            if (options.bindings) {
-                angular.extend(_directive.scope, options.bindings);
-            }
             return component;
         }
 
         function Class (options) {
-            var angular1Selector = getSanitizedSelector();
+            var ng1ModuleName = isAttribute ? moduleName : _selector;
             _directive.controller = options.constructor;
 
-            component[_selector]
-                .directive(angular1Selector, directiveFn);
+            component[ng1ModuleName]
+                .directive(moduleName, directiveFn);
 
             return component;
         }
@@ -103,15 +110,15 @@
                 return component;
             }
 
-            function addProviders (moduleName, injectors) {
-                return angular.module(moduleName, injectors);
+            function addProviders (moduleSelectorName, injectors) {
+                return angular.module(moduleSelectorName, injectors);
             }
         }
         // returns a cleaned selector after
         // stripping invalid characters for defining modules:
         // [,], - to camelCase
-        function getSanitizedSelector () {
-            return _selector
+        function getSanitizedSelector (selector) {
+            return selector
                 .replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); })
                 .replace(/\[|]/g, "");
         }

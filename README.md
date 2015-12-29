@@ -20,7 +20,7 @@ reasons:
 3. You want to ease migration (when possible) of angular 1 to 2  
 
 ## Examples
-This code eventually defines an angular 1 module, directive and controller:  
+This code eventually defines an angular.js version 1.x module, directive and controller:  
 ```javascript
 var myApp = ng.core
 	.Component({
@@ -29,11 +29,11 @@ var myApp = ng.core
 			'core.services'
 		],
 		bindings: {
-			app: '@'
+			title: '@'
 		}
 	})
 	.View({
-		templateUrl: 'app/my-app/my-app.tpl.html'
+		template: '<div> {{ myApp.title }} </div>'
 	})
 	.Class({
 		constructor: 'MyAppCtrl'
@@ -51,12 +51,13 @@ angular.module('app', [
 ```
 Simply, use the module in html:  
 ```html
-<my-app app="my-player"></my-app>
+<my-app title="my-player"></my-app>
 ```
 ## API  
 1. Component - a component is an element by default  
   1. selector - of element - ```<my-app></my-app>``` - defined as ```'my-app'```  
-  1. selector - of attribute - ```<div tooltip></div>``` - defined as ```'[tooltip]'```  
+  1. selector - of attribute - ```<div tooltip></div>``` - defined as ```'[tooltip]'```   
+1. "controllerAs" inside the template follows the camel-case module name. i.e. - if **selector: 'my-app'**, then, the controllerAs is: **myApp** (as in angular 2 Beta). You can pass a custom **controllerAs** alias in the Component's options.
 
 ## Install
 use npm:  

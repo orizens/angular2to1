@@ -23,11 +23,11 @@ describe('Angular2To1 Attribute Component', function() {
 	});
 	
 	it('should define a private scope and vm reference', function() {
-		expect(iscope.vm).toBeDefined();
+		expect(iscope.testattr).toBeDefined();
 	});
 	
 	it('should add a class to element', function() {
-		expect(element.hasClass(iscope.vm.name)).toBeTruthy;
+		expect(element.hasClass(iscope.testattr.name)).toBeTruthy;
 	});
 	
 });

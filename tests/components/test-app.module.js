@@ -11,7 +11,7 @@
             }
         })
         .View({
-            template: '<div> {{ vm.name }} </div>'
+            template: '<div> {{ testApp.name }} {{ testApp.app }}</div>'
         })
         .Class({
             constructor: 'TestAppCtrl'
@@ -19,12 +19,11 @@
 
     angular
     	.module('test-app')
-    	.controller('TestAppCtrl', TestAppCtrl)
+    	.controller('TestAppCtrl', TestAppCtrl);
 
     function TestAppCtrl (Tests) {
-        var vm = this;
-        vm.name = 'angular2To1';
-        vm.items = Tests.items;
+        this.name = 'angular2To1';
+        this.items = Tests.items;
     }
 
     angular

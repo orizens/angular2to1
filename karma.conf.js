@@ -18,7 +18,7 @@ module.exports = function(config) {
         'node_modules/angular/angular.min.js',
         'node_modules/angular-mocks/angular-mocks.js',
         // 'index.js',
-        'dist/angular2to1.min.js',
+        'index.js',
         'tests/components/**/*.js',
         'tests/**/*.spec.js'
     ],
@@ -74,5 +74,5 @@ module.exports = function(config) {
         'karma-chrome-launcher',
         'karma-jasmine'
     ]
-  })
-}
+  });
+};

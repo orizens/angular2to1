@@ -1,5 +1,5 @@
 describe('Angular2To1 Element Component', function() {
-	var component, ctrl, TestAppCtrl, Tests;
+	var component, ctrl, TestAppCtrl, Tests, element, scope;
 
 	beforeEach(module('test-app'));
 
@@ -7,7 +7,7 @@ describe('Angular2To1 Element Component', function() {
 		Tests = _Tests_;
 		scope = $rootScope.$new();
 		scope.app = "ng2to1";
-		ctrl = $controller("TestAppCtrl as vm", {
+		ctrl = $controller("TestAppCtrl as testApp", {
 		  $scope: scope 
 		});
 	}));
@@ -21,10 +21,11 @@ describe('Angular2To1 Element Component', function() {
 	});
 	
 	it('should define run the controller if defined as a string', function() {
-		expect(scope.vm.name).toMatch(ctrl.name);
+		expect(scope.testApp.name).toMatch(ctrl.name);
 	});
 	
 	it('should inject the services & modules from "bindings"', function() {
-		expect(scope.vm.items).toBe(Tests.items);
+		expect(scope.testApp.items).toBe(Tests.items);
 	});
+
 });
